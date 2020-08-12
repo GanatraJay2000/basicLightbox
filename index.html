@@ -9,22 +9,57 @@
         href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700&family=Roboto+Slab:wght@400;500;600;700;900&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <title>Modal 2</title>
+    <title>Lightbox</title>
     <style>
+        * {
+            padding: 0;
+            margin: 0;
+            transition: 0.5s;
+        }
+
         body * {
             font-family: "Raleway", sans-serif;
             font-weight: 300;
         }
 
-        .container {
-            min-height: 100vh;
+        .banner {
+            color: white;
+            background: rgb(21, 87, 152);
+            background: linear-gradient(120deg, #155798 0%, #159758 100%);
             display: grid;
             place-items: center;
+            min-height: 50vh;
+            position: relative;
+        }
+
+        .title {
+            font-size: 80px;
+            font-weight: 200;
+        }
+
+        .sub-title {
+            font-size: 20px;
+            letter-spacing: 1px;
+            font-weight: 200;
+        }
+
+        h1 {
+            margin: 30px 0;
+        }
+
+        .container {
+            width: 80%;
+            margin: 30px auto;
+            text-align: center;
+        }
+
+        .container>div {
+            margin: 30px auto;
         }
 
         .wrapper {
             margin-top: 10px;
-            width: 50%;
+            width: 100%;
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
@@ -33,14 +68,14 @@
         }
 
         .wrapper .image {
-            width: 180px;
-            height: 180px;
+            width: 300px;
+            height: 300px;
             display: block;
         }
 
         .open-image {
-            width: 180px;
-            height: 180px;
+            width: 300px;
+            height: 300px;
             display: block;
             cursor: pointer;
         }
@@ -50,70 +85,177 @@
             height: 100%;
         }
 
-        .open-modal {
-            padding: 10px 30px;
-            background: #fff;
-            border: 1px solid;
-            transition: 0.3s;
+        .how-to-use {
+            text-align: left;
+            line-height: 30px;
+            font-size: 20px;
         }
 
-        .open-modal:hover,
-        .open-modal:focus {
+        .example {
+            text-align: left;
+            background-color: #fdf2cf;
+            border-radius: 10px;
+            padding: 1px 30px 30px;
+        }
+
+        footer {
+            background: rgb(21, 87, 152);
+            background: linear-gradient(240deg, rgba(21, 87, 152, 1) 0%, rgba(21, 151, 88, 1) 100%);
+            height: 20vh;
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            font-size: 20px;
             color: white;
-            background-color: #222;
+        }
+
+        footer * {
+            color: white;
+        }
+
+        footer div:first-child {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        footer div:first-child div:nth-child(2) a {
+            padding: 0 5px;
+        }
+
+        @media screen and (max-width:500px) {
+            .banner {
+                min-height: 30vh !important;
+            }
+
+            .banner .title {
+                font-size: 40px;
+                padding: 0 10px;
+            }
+
+            .banner .sub-title {
+                padding: 0 10px;
+                font-size: 16px;
+            }
+
+            .container {
+                width: 90%;
+            }
+
+            .example {
+                padding: 10px;
+            }
         }
     </style>
 </head>
 
 <body>
-
-    <div class="container">
-        <div class="wrapper">
-            <div class="open-image">
-                <img class="image"
-                    src="https://images.pexels.com/photos/1846268/pexels-photo-1846268.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-                    alt="beach">
+    <div class="banner">
+        <div class="">
+            <div class="title">
+                basicLightbox
             </div>
-            <div class="open-image">
-                <img class="image"
-                    src="https://images.pexels.com/photos/4755027/pexels-photo-4755027.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-                    alt="beach">
-            </div>
-            <div class="open-image">
-                <img class="image"
-                    src="https://images.pexels.com/photos/3876937/pexels-photo-3876937.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
-                    alt="beach">
-            </div>
-            <div class="open-image">
-                <img class="image"
-                    src="https://images.pexels.com/photos/2734404/pexels-photo-2734404.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-                    alt="beach">
-            </div>
-            <div class="open-image">
-                <img class="image"
-                    src="https://images.pexels.com/photos/4298004/pexels-photo-4298004.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
-                    alt="beach">
-            </div>
-            <div class="open-image">
-                <img class="image"
-                    src="https://images.pexels.com/photos/2760856/pexels-photo-2760856.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
-                    alt="beach">
-            </div>
-            <div class="open-image">
-                <img class="image"
-                    src="https://images.pexels.com/photos/2661176/pexels-photo-2661176.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
-                    alt="beach">
-            </div>
-            <div class="open-image">
-                <img class="image"
-                    src="https://images.pexels.com/photos/1100946/pexels-photo-1100946.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500">
-            </div>
-            <div class="open-image">
-                <img class="image"
-                    src="https://images.pexels.com/photos/2524368/pexels-photo-2524368.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500">
+            <div class="sub-title">
+                a basic lightbox extension ...literally
             </div>
         </div>
     </div>
+    <div class="container">
+        <div class="how-to-use">
+            <h1>How to use</h1>
+            <p>Download the files. <a href="basicLightbox.zip" class="download" download>Download</a></p>
+            <p>Add the css and js files to your project</p>
+            <p>link css</p>
+            <p>link js</p>
+            <p>You are ready to go &#9996;</p>
+        </div>
+        <div class="demo">
+            <h1 style="font-size: 40px;text-align:left;">Demo</h1>
+            <div class="wrapper">
+                <div class="open-image">
+                    <img class="image"
+                        src="https://images.pexels.com/photos/1846268/pexels-photo-1846268.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+                        alt="beach">
+                </div>
+                <div class="open-image">
+                    <img class="image"
+                        src="https://images.pexels.com/photos/4755027/pexels-photo-4755027.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+                        alt="beach">
+                </div>
+                <div class="open-image">
+                    <img class="image"
+                        src="https://images.pexels.com/photos/3876937/pexels-photo-3876937.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
+                        alt="beach">
+                </div>
+                <div class="open-image">
+                    <img class="image"
+                        src="https://images.pexels.com/photos/2734404/pexels-photo-2734404.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+                        alt="beach">
+                </div>
+                <div class="open-image">
+                    <img class="image"
+                        src="https://images.pexels.com/photos/4298004/pexels-photo-4298004.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
+                        alt="beach">
+                </div>
+                <div class="open-image">
+                    <img class="image"
+                        src="https://images.pexels.com/photos/2760856/pexels-photo-2760856.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
+                        alt="beach">
+                </div>
+                <div class="open-image">
+                    <img class="image"
+                        src="https://images.pexels.com/photos/2661176/pexels-photo-2661176.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
+                        alt="beach">
+                </div>
+                <div class="open-image">
+                    <img class="image"
+                        src="https://images.pexels.com/photos/1100946/pexels-photo-1100946.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500">
+                </div>
+                <div class="open-image">
+                    <img class="image"
+                        src="https://images.pexels.com/photos/2524368/pexels-photo-2524368.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500">
+                </div>
+            </div>
+        </div>
+        <div class="example">
+            <h2 style="margin:20px 0 10px;">Example</h2>
+            &lt;div class="open-image">
+            <div style="margin-left:20px;">
+                &lt;img class="image" src="image1.png" alt="">
+            </div>
+            &lt;/div><br>
+            &lt;div class="open-image">
+            <div style="margin-left:20px;">
+                &lt;img class="image" src="image2.png" alt="">
+            </div>
+            &lt;/div><br>
+            &lt;div class="open-image">
+            <div style="margin-left:20px;">
+                &lt;img class="image" src="image3.png" alt="">
+            </div>
+            &lt;/div>
+            <div style="margin-top:20px;">
+                <p>You just have to add any number of images in the manner as above and you can make them display any
+                    way you want. <br>I have used a wrapper outside that is using flexbox.
+                    <br>Don't forget to link the js and css files.
+                </p>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="">
+            <div class="">Jay Ganatra </div>
+            <div class="">
+                <a target="_blank" href="https://www.linkedin.com/in/jay-ganatra-559052a7/"><i class="fa fa-linkedin"
+                        aria-hidden="true"></i></a>
+                <a target="_blank" href="https://github.com/GanatraJay2000"><i class="fa fa-github"
+                        aria-hidden="true"></i></a>
+            </div>
+        </div>
+        <div class=""> Images from <a target="_blank" href="https://www.pexels.com/">Pexels</a></div>
+    </footer>
     <script src="lightbox.js"></script>
 </body>
 
