@@ -1,0 +1,2 @@
+# basicLightbox
+Basic Lightbox extension
