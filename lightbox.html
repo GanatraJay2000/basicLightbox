@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="lightbox.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700&family=Roboto+Slab:wght@400;500;600;700;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Modal 2</title>
+    <style>
+        body * {
+            font-family: "Raleway", sans-serif;
+            font-weight: 300;
+        }
+
+        .container {
+            min-height: 100vh;
+            display: grid;
+            place-items: center;
+        }
+
+        .wrapper {
+            margin-top: 10px;
+            width: 50%;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            transition: 0.5s;
+        }
+
+        .wrapper .image {
+            width: 180px;
+            height: 180px;
+            display: block;
+        }
+
+        .open-image {
+            width: 180px;
+            height: 180px;
+            display: block;
+            cursor: pointer;
+        }
+
+        .open-image img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .open-modal {
+            padding: 10px 30px;
+            background: #fff;
+            border: 1px solid;
+            transition: 0.3s;
+        }
+
+        .open-modal:hover,
+        .open-modal:focus {
+            color: white;
+            background-color: #222;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="wrapper">
+            <div class="open-image">
+                <img class="image"
+                    src="https://images.pexels.com/photos/1846268/pexels-photo-1846268.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+                    alt="beach">
+            </div>
+            <div class="open-image">
+                <img class="image"
+                    src="https://images.pexels.com/photos/4755027/pexels-photo-4755027.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+                    alt="beach">
+            </div>
+            <div class="open-image">
+                <img class="image"
+                    src="https://images.pexels.com/photos/3876937/pexels-photo-3876937.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
+                    alt="beach">
+            </div>
+            <div class="open-image">
+                <img class="image"
+                    src="https://images.pexels.com/photos/2734404/pexels-photo-2734404.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+                    alt="beach">
+            </div>
+            <div class="open-image">
+                <img class="image"
+                    src="https://images.pexels.com/photos/4298004/pexels-photo-4298004.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
+                    alt="beach">
+            </div>
+            <div class="open-image">
+                <img class="image"
+                    src="https://images.pexels.com/photos/2760856/pexels-photo-2760856.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
+                    alt="beach">
+            </div>
+            <div class="open-image">
+                <img class="image"
+                    src="https://images.pexels.com/photos/2661176/pexels-photo-2661176.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
+                    alt="beach">
+            </div>
+            <div class="open-image">
+                <img class="image"
+                    src="https://images.pexels.com/photos/1100946/pexels-photo-1100946.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500">
+            </div>
+            <div class="open-image">
+                <img class="image"
+                    src="https://images.pexels.com/photos/2524368/pexels-photo-2524368.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500">
+            </div>
+        </div>
+    </div>
+    <script src="lightbox.js"></script>
+</body>
+
+</html>
